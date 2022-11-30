@@ -12,43 +12,44 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :cep, id: "cep" %>
-    <%= form.text_field :cep %>
+    <%= form.label :cep  %>
+    <%= form.text_field :cep, id:"cep", value:"", size:"20", maxlength:"9",
+    onblur:"pesquisacep(this.value);" %>
   </div>
 
   <div class="field">
-    <%= form.label :rua, id:"rua" %>
-    <%= form.text_field :rua %>
+    <%= form.label :rua %>
+    <%= form.text_field :rua, id:"rua" %>
   </div>
 
   <div class="field">
-    <%= form.label :numero, id: "numero" %>
-    <%= form.text_field :numero %>
+    <%= form.label :numero %>
+    <%= form.text_field :numero, id: "numero" %>
   </div>
 
   <div class="field">
-    <%= form.label :complemento, id: "complemento" %>
-    <%= form.text_field :complemento %>
+    <%= form.label :complemento %>
+    <%= form.text_field :complemento, id: "complemento" %>
   </div>
 
   <div class="field">
-    <%= form.label :bairro, id: "bairro"%>
-    <%= form.text_field :bairro %>
+    <%= form.label :bairro%>
+    <%= form.text_field :bairro, id: "bairro" %>
   </div>
 
   <div class="field">
-    <%= form.label :cidade, id: "cidade" %>
-    <%= form.text_field :cidade %>
+    <%= form.label :cidade %>
+    <%= form.text_field :cidade, id: "cidade" %>
   </div>
 
   <div class="field">
-    <%= form.label :uf, id:"uf" %>
-    <%= form.text_field :uf %>
+    <%= form.label :uf %>
+    <%= form.text_field :uf, id:"uf" %>
   </div>
 
   <div class="field">
-    <%= form.label :ibge, id: "ibge" %>
-    <%= form.text_field :ibge %>
+    <%= form.label :ibge %>
+    <%= form.text_field :ibge, id: "ibge" %>
   </div>
 
   <div class="actions">
