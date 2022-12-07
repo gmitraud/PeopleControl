@@ -10,91 +10,82 @@
           <span class="jab">People</span><span class="tv">CONTROL</span
           ><span class="fist">  &#x1F3E5;</span>
         </h1>
+    
+      <ul>
+          <li class="nav-item">
+            <%= link_to 'Munícipes', municipes_path %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Endereços', enderecos_path %>
+          </li>
+      </ul>
     </nav>
-
-    <ul>
-        <li class="nav-item">
-          <a href="#about" class="nav-link" id="nav-link">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="#stars" class="nav-link" id="nav-link">Boxing Stars</a>
-        </li>
-        <li class="nav-item">
-          <a href="#stakeholders" class="nav-link" id="nav-link"
-            >stakeholders</a
-          >
-        </li>
-        <li class="nav-item">
-          <a href="#sub" class="nav-link" id="nav-link">Subscribe</a>
-        </li>
-    </ul>
 
         <div class="hamburger" id="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-    <!-- Web page CSS -->
-    <link rel="stylesheet" href="lib/assets/style.css" />
 
-    <!-- Simple lightbox CSS -->
-    <link rel="stylesheet" href="assets/css/simple-lightbox.min.css" />
+  <section class="hero">
+      <div class="intro-text">
+        <h1>
+          <span class="hear"> Sistema para cadastro de </span> <br />
+          <span class="connecting"> Munícipes e Endereços!</span>
+        </h1>
 
-    <!-- Favicons -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/icons/favicon-16x16.png"
-    />
+        <p>
+          Feito com Ruby on Rails! 
+        </p>
+        <a class="btn red" href="#">Learn More</a>
+        <a class="btn blue" href="#">Subscribe</a>
+      </div>
+      
+      <div id="videopreview">
+      <%= video_tag "saudevideo.m4a", width: 560, height: 315, controls: true, id: :videoplay %>
+      </div>
+      <%# <video class="videopreview" width='560' height='315' src="https://vimeo.com/778901993"></video> %>
+        <%# <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/ca1-Xqzx29U"
+          title="YouTube video player"
+          frameborder="10"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe> %>
+        <div class="stand-1"></div>
+        <div class="stand-2"></div>
+    </section>
 
-    <title>JabTV Landing Page</title>
-  </head>
-  <body>
-    <!-- Navbar -->
+    <script> 
+    let videopreview = document.querySelector("video")
+    function startPreview() {
+   videopreview.muted = true;
+   videopreview.currentTime = 1;
+   videopreview.playbackRate = 0.5;
+   videopreview.play();
+  }
 
-    <!-- Dark/light theme switcher -->
+  function stopPreview() {
+   videopreview.currentTime = 0;
+   videopreview.playbackRate = 1;
+   videopreview.pause();
+  }
 
-    <!-- Bars -->
+  let previewTimeout = null;
 
-    <!-- Hero section -->
+  // debugger
+ videopreview.addEventListener("mouseover", () => {
+    startPreview();
+    previewTimeout = setTimeout(stopPreview, 4000);
+  });
 
-    <!-- About section -->
-
-    <!-- Lightbox image gallery -->
-
-    <!-- Jab TV Stakeholders -->
-
-    <!-- Email subscription -->
-
-    <!-- Social icons -->
-
-    <!-- Scroll to top button -->
-
-    <!-- Web page script -->
-    <script src="assets/js/app.js"></script>
-
-    <!-- Ion icons CDN -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-
-    <!-- Simple lightbox -->
-    <script src="assets/js/simple-lightbox.min.js"></script>
-    <script>
-      // Simple lightbox initializer
-    </script>
+ videopreview.addEventListener("mouseleave", () => {
+    clearTimeout(previewTimeout);
+    previewTimeout = null;
+    stopPreview();
+  });
+  </script>
+    
   </body>
 </html>
