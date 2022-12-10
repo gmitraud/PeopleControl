@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track" => true %>
     <nav class="logo">
         <h1>
           <span class="jab">People</span><span class="tv">CONTROL</span
@@ -26,8 +26,10 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
+  </head>
 
-  <section class="hero">
+<body>
+  <section class="firstintro">
       <div class="intro-text">
         <h1>
           <span class="hear"> Sistema para cadastro de </span> <br />
@@ -37,55 +39,48 @@
         <p>
           Feito com Ruby on Rails! 
         </p>
-        <a class="btn red" href="#">Learn More</a>
-        <a class="btn blue" href="#">Subscribe</a>
+        <%= link_to 'Munícipes', municipes_path, class: "btn red" %>
+        <%= link_to 'Endereços', enderecos_path, class: "btn blue" %>
       </div>
       
       <div id="videopreview">
       <%= video_tag "saudevideo.m4a", width: 560, height: 315, controls: true, id: :videoplay %>
       </div>
-      <%# <video class="videopreview" width='560' height='315' src="https://vimeo.com/778901993"></video> %>
-        <%# <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/ca1-Xqzx29U"
-          title="YouTube video player"
-          frameborder="10"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe> %>
         <div class="stand-1"></div>
         <div class="stand-2"></div>
     </section>
 
-    <script> 
-    let videopreview = document.querySelector("video")
-    function startPreview() {
-   videopreview.muted = true;
-   videopreview.currentTime = 1;
-   videopreview.playbackRate = 0.5;
-   videopreview.play();
-  }
-
-  function stopPreview() {
-   videopreview.currentTime = 0;
-   videopreview.playbackRate = 1;
-   videopreview.pause();
-  }
-
-  let previewTimeout = null;
-
-  // debugger
- videopreview.addEventListener("mouseover", () => {
-    startPreview();
-    previewTimeout = setTimeout(stopPreview, 4000);
-  });
-
- videopreview.addEventListener("mouseleave", () => {
-    clearTimeout(previewTimeout);
-    previewTimeout = null;
-    stopPreview();
-  });
-  </script>
     
+
+      <script>
+
+      let videopreview = document.querySelector("video")
+      function startPreview() {
+      videopreview.muted = true;
+      videopreview.currentTime = 1;
+      videopreview.playbackRate = 0.5;
+      videopreview.play();
+      }
+
+      function stopPreview() {
+      videopreview.currentTime = 0;
+      videopreview.playbackRate = 1;
+      videopreview.pause();
+      }
+
+      let previewTimeout = null;
+
+      // debugger
+    videopreview.addEventListener("mouseover", () => {
+        startPreview();
+        previewTimeout = setTimeout(stopPreview, 4000);
+      });
+
+    videopreview.addEventListener("mouseleave", () => {
+        clearTimeout(previewTimeout);
+        previewTimeout = null;
+        stopPreview();
+      });
+      </script>
   </body>
 </html>

@@ -1,41 +1,55 @@
-<p id="notice"><%= notice %></p>
+ <!DOCTYPE html>
+ <html>
+    <head>
+    <%= stylesheet_link_tag "tablestyle", media: "all", "data-turbolinks-track" => true %>
+    </head>
 
-<h1>Municipes</h1>
+    <body>
+    <section class="table1">
+        <table>
+          <thead>
+          <h1>Munícipes</h1>
+            <tr>
+              <th scope="col">Fullname</th>
+              <th scope="col">Cpf</th>
+              <th scope="col">Cns</th>
+              <th scope="col">Email</th>
+              <th scope="col">Birthdate</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Photo</th>
+              <th scope="col">Status</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Fullname</th>
-      <th>Cpf</th>
-      <th>Cns</th>
-      <th>Email</th>
-      <th>Birthdate</th>
-      <th>Phone</th>
-      <th>Photo</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <tbody>
+              <% @municipes.each do |municipe| %>
+            <tr>
+              <td scope="row"><%= municipe.fullname %></td>
+            
+              <td scope="row"><%= municipe.cpf %></td>
+            
+              <td scope="row"><%= municipe.cns %></td>
+            
+              <td scope="row"><%= municipe.email %></td>
+            
+              <td scope="row"><%= municipe.birthdate %></td>
+            
+              <td scope="row"><%= municipe.phone %></td>
+            
+              <td scope="row"><%= municipe.photo %></td>
+        
+              <td scope="row"><%= municipe.status %></td>
+            
+              <td><%= link_to 'Show', municipe, id: :municipesshow %></td>
 
-  <tbody>
-    <% @municipes.each do |municipe| %>
-      <tr>
-        <td><%= municipe.fullname %></td>
-        <td><%= municipe.cpf %></td>
-        <td><%= municipe.cns %></td>
-        <td><%= municipe.email %></td>
-        <td><%= municipe.birthdate %></td>
-        <td><%= municipe.phone %></td>
-        <td><%= municipe.photo %></td>
-        <td><%= municipe.status %></td>
-        <td><%= link_to 'Show', municipe %></td>
-        <td><%= link_to 'Edit', edit_municipe_path(municipe) %></td>
-        <td><%= link_to 'Destroy', municipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <td><%= link_to 'Edit', edit_municipe_path(municipe), id: :municipesedit %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
-<br>
-
-<%= link_to 'New Municipe', new_municipe_path %>
+      <%= link_to 'New Municipe', new_municipe_path %>
+      </section>
+    </body>
+</html>
