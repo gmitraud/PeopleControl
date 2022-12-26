@@ -1,3 +1,5 @@
+<%= javascript_include_tag "autocep", media: "all", "data-turbolinks-track" => true%>
+
 <%= form_with(model: endereco, local: true) do |form| %>
   <% if endereco.errors.any? %>
     <div id="error_explanation">

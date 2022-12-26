@@ -1,0 +1,106 @@
+html, body, .intro {
+  height: 100%;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 35px;
+  }
+
+body {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to top, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
+
+.table1 {
+    background: linear-gradient(to top, grey, black);
+    display: grid;
+    margin: 0 50px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+table, th, td {
+    text-align: center;
+    border-radius: 2px;
+    border-collapse: collapse;
+    border-bottom: 1px solid rgb(148, 148, 148);
+    padding: 10px;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+thead th,
+tbody th {
+  color: #fff;
+  font-size: 15px;
+  padding: 15px;
+}
+
+tbody td {
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+}
+
+#buttons, #btnnew {
+    border: 1px solid;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+a {
+    color: #fff;
+  
+    &:visited {
+      color: #370a68;
+    }
+  
+    &:hover {
+      color: rgba(37, 117, 252, 1);
+      background-color: #370a68;
+    }
+  }
+
+#btnnew {
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+
+    justify-content: space-between;
+}
+
+p {
+  border: 1px solid;
+  border-radius: 3px;
+  width: 250px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+.btnsdiv{
+  // width: 35px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  }
+
+#edit1, #back1 {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 1px 5px 1px 5px;
+}

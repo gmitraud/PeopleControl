@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "register", media: "all", "data-turbolinks-track" => true %>
+
 <%= form_with(model: municipe, local: true) do |form| %>
   <% if municipe.errors.any? %>
     <div id="error_explanation">
@@ -11,47 +13,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :fullname %>
-    <%= form.text_field :fullname %>
+  <section class="table1">
+  <div class="row">
+    <section class="col-100">
+      <%= form.label "Nome Completo", id: :label %>
+      <%= form.text_field :fullname, required: :true, placeholder: "Digite seu nome completo", id: :textfield %>
+    </section>
   </div>
 
-  <div class="field">
-    <%= form.label :cpf %>
-    <%= form.text_field :cpf %>
+  <div class="row">
+    <section class="col-50">
+    <%= form.label "CPF", id: :label %>
+    <%= form.text_field :cpf, required: :true, placeholder: "Digite seu CPF", id: :textfield %>
+
+    <%= form.label "CNS", id: :label %>
+    <%= form.text_field :cns, required: :true, placeholder: "Digite seu CNS", id: :textfield %>
   </div>
 
-  <div class="field">
-    <%= form.label :cns %>
-    <%= form.text_field :cns %>
+  <div class="row">
+  <section class="col-50">
+    <%= form.label "Endereço de Email", id: :label %>
+    <%= form.text_field :email, required: :true, placeholder: "Digite seu Email", id: :textfield %>
+
+    <%= form.label "Telefone", id: :label %>
+    <%= form.text_field :phone, required: :true, placeholder: "Digite seu celular", id: :textfield %>
+  </section>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <div class="row">
+  <section class="col-50">
+    <%= form.label "Data de Nascimento", id: :label %>
+    <%= form.date_select :birthdate, required: :true, id: :datefield %>
 
-  <div class="field">
-    <%= form.label :birthdate %>
-    <%= form.date_select :birthdate %>
-  </div>
+    <%= form.label "Foto", id: :label %>
+    <%= form.file_field :photo, id: :filefield %>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_area :photo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status %>
+    <%= form.label "Status (ativo / inativo)", id: :label %>
+    <%= form.check_box :status, id: :checkbox %>
+    </section>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  </section>
 <% end %>

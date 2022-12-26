@@ -1,44 +1,53 @@
-<p id="notice"><%= notice %></p>
+ <!DOCTYPE html>
+ <html>
+    <head>
+    <%= stylesheet_link_tag "tablestyle", media: "all", "data-turbolinks-track" => true %>
+    </head>
 
-<p>
-  <strong>Fullname:</strong>
-  <%= @municipe.fullname %>
-</p>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @municipe.cpf %>
-</p>
+<body>
+  <section class="table1">
+    <table>
+      <thead class="thead1"> 
 
-<p>
-  <strong>Cns:</strong>
-  <%= @municipe.cns %>
-</p>
+        <p>
+        <%= image_tag(@municipe.photo, size: "250x150") if @municipe.photo.attached? %>
+        </p>
+        
+        <h1>
+          <strong><%= @municipe.fullname %></strong>
+        </h1>
+        
+        <tr>
+          <th scope="col">CPF</th>
+          <th scope="col">CNS</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Data de Nascimento</th>
+          <th scope="col">Número de Telefone</th>
+          <th scope="col">Status</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<p>
-  <strong>Email:</strong>
-  <%= @municipe.email %>
-</p>
+      <tbody>
+        <tr>
+          <td scope="row"><%= @municipe.cpf %></td>
+          <td scope="row"><%= @municipe.cns %></td>
+          <td scope="row"><%= @municipe.email %></td>
+          <td scope="row"><%= @municipe.birthdate %></td>
+          <td scope="row"><%= @municipe.phone %></td>
+          <td scope="row"><%= @municipe.status %></td>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @municipe.birthdate %>
-</p>
+          
+      </tbody>
+    </table>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @municipe.phone %>
-</p>
+    <div class="btnsdiv">
 
-<p>
-  <strong>Photo:</strong>
-  <%= @municipe.photo %>
-</p>
+      <%= link_to 'Back', municipes_path, id: :back1 %>
+      <%= link_to 'Edit', edit_municipe_path(@municipe), id: :edit1%>
 
-<p>
-  <strong>Status:</strong>
-  <%= @municipe.status %>
-</p>
+    </div>
+  </section>
+</body>
 
-<%= link_to 'Edit', edit_municipe_path(@municipe) %> |
-<%= link_to 'Back', municipes_path %>
