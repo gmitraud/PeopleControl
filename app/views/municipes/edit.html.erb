@@ -1,6 +1,8 @@
-<h1>Editing Municipe</h1>
+<h1>
+Editando Municipe <strong><%= @municipe.fullname %></strong>
+</h1>
 
 <%= render 'form', municipe: @municipe %>
 
-<%= link_to 'Show', @municipe %> |
-<%= link_to 'Back', municipes_path %>
+<%= link_to 'Mostrar', @municipe %> |
+<%= link_to 'Voltar', municipes_path %>
