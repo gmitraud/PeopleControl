@@ -1,42 +1,57 @@
 <p id="notice"><%= notice %></p>
 <%= stylesheet_link_tag "register_address", media: "all", "data-turbolinks-track" => true %>
 
-<h1>Enderecos</h1>
+<body>
+    <section class="index-tbody">
+        <table>
+          <thead class="thead1">
+          <h1>Enderecos</h1>
+            <tr>
+              <th scope="col">CEP</th>
+              <th scope="col">Rua</th>
+              <th scope="col">Numero</th>
+              <th scope="col">Complemento</th>
+              <th scope="col">Bairro</th>
+              <th scope="col">Cidade</th>
+              <th scope="col">UF</th>
+              <th scope="col">IBGE</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Cep</th>
-      <th>Rua</th>
-      <th>Numero</th>
-      <th>Complemento</th>
-      <th>Bairro</th>
-      <th>Cidade</th>
-      <th>Uf</th>
-      <th>Ibge</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <tbody>
+              <% @enderecos.each do |endereco| %>
+            <tr>
+              <td scope="row"><%= endereco.cep %></td>
+            
+              <td scope="row"><%= endereco.rua %></td>
+            
+              <td scope="row"><%= endereco.numero %></td>
+            
+              <td scope="row"><%= endereco.complemento %></td>
+            
+              <td scope="row"><%= endereco.bairro %></td>
+            
+              <td scope="row"><%= endereco.cidade %></td>
+                   
+              <td scope="row"><%= endereco.uf %></td>
 
-  <tbody>
-    <% @enderecos.each do |endereco| %>
-      <tr>
-        <td><%= endereco.cep %></td>
-        <td><%= endereco.rua %></td>
-        <td><%= endereco.numero %></td>
-        <td><%= endereco.complemento %></td>
-        <td><%= endereco.bairro %></td>
-        <td><%= endereco.cidade %></td>
-        <td><%= endereco.uf %></td>
-        <td><%= endereco.ibge %></td>
-        <td><%= link_to 'Show', endereco %></td>
-        <td><%= link_to 'Edit', edit_endereco_path(endereco) %></td>
-        <td><%= link_to 'Destroy', endereco, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+              <td scope="row"><%= endereco.ibge %></td>
+            
+              <td><%= link_to 'Mostrar', endereco, id: :buttons %></td>
 
-<br>
+              <td><%= link_to 'Editar', edit_endereco_path(endereco), id: :buttons %></td>
 
-<%= link_to 'New Endereco', new_endereco_path %>
+              <td><%= link_to 'Deletar Cadastro', endereco, method: :delete, data: { confirm: 'Você tem certeza? ESta ação não poderá ser desfeita.' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      <div class="btnsdiv">
+      <%= link_to 'Voltar', welcome_index_path, id: :btnnew %>
+      <%= link_to 'Novo Endereco', new_endereco_path, id: :btnnew %>
+      </div>
+      </section>
+    </body>
+</html>

@@ -15,38 +15,86 @@
     background: linear-gradient(#ff7a75, #999bf8)
   }
 
-.row {
-    height: 100%;
-    margin: 15px;
-    padding: 15px;
-    font-size: 20px;
+  .index-tbody {
+    background: linear-gradient(to top, grey, black);
+    display: grid;
+    margin: 0 50px;
+    border-radius: 5px;
+    align-items: center;
+  }
+
+  table, th, td {
+    text-align: center;
+    border-radius: 2px;
+    border-collapse: collapse;
+    border-bottom: 1px solid rgb(148, 148, 148);
+    padding: 10px;
 }
 
-// .col-50 {
-//     width: 50%;
-// }
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
-// .col-100 {
-//     width: 100%;
-// }
+thead th,
+tbody th {
+  color: #fff;
+  font-size: 15px;
+  padding: 15px;
+}
 
-.col-100, .col-50 {
-  margin: 10px;
-  padding: 10px;
+tbody td {
+  font-weight: 500;
+  color: rgba(255,255,255,.65);
+}
+
+#buttons, #btnnew {
+    border: 1px solid;
+    padding: 2px;
+    border-radius: 5px;
+}
+a {
+  color: #fff;
+
+  &:visited {
+    color: #999bf8;
+  }
+
+  &:hover {
+    color: rgba(37, 117, 252, 1);
+    background-color: #ff7a75;
+  }
+}
+
+#btnnew {
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+
   justify-content: space-between;
-  font-size: 20px;
 }
 
-.col-50 {
-  display: flex;
-  
+p {
+border: 1px solid;
+border-radius: 3px;
+width: 250px;
+display: block;
+margin-right: auto;
+margin-left: auto;
+
 }
 
-.table1 {
-  border: solid 2px;
-  background: linear-gradient(rgb(61, 61, 61), rgb(122, 122, 122));
-  border-radius: 5px;
-  width: 900px;
-  margin-right: auto;
-  margin-left: auto;
+.btnsdiv{
+// width: 35px;
+display: flex;
+justify-content: space-between;
+margin: 5px;
+}
+
+#edit1, #back1 {
+border: 1px solid;
+border-radius: 3px;
+padding: 1px 5px 1px 5px;
 }
