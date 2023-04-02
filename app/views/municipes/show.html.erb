@@ -36,17 +36,17 @@
           <td scope="row"><%= @municipe.email %></td>
           <td scope="row"><%= @municipe.birthdate %></td>
           <td scope="row"><%= @municipe.phone %></td>
-          <td scope="row"><%= @municipe.status %></td>
+          <td scope="row"><%= active_or_inactive(@municipe.status) %></td>
 
-          
+        </tr>
       </tbody>
     </table>
 
     <div class="btnsdiv">
 
       <%= link_to 'Voltar', municipes_path, id: :back1 %>
-      <%= link_to 'Editar', edit_municipe_path(@municipe), id: :edit1%>
-
+      <%= link_to 'Editar', edit_municipe_path(@municipe), id: :edit1 %>
+      <%= link_to 'Mostrar Endereco', detalhe_endereco_path(@municipe), id: :edit1%>
     </div>
   </section>
 </body>

@@ -5,8 +5,10 @@
   --normal-font: 400;
   --bold-font: 600;
   --bolder-font: 900;
-  --primary-color: #ff7a75;
-  --secondary-color: #999bf8;
+  --primary-color: #333333;
+  --secondary-color: #ffffff;
+  --terciary-color: rgb(98, 98, 240);
+  --quaternary-color: rgb(199, 199, 250);
   --line-height: 1.7rem;
   --transition: 0.4s ease-in;
 }
@@ -26,6 +28,7 @@ html {
 
  body {
   font-family: "Roboto", sans-serf;
+  background-color: var(--secondary-color);
 }
 
 ul li {
@@ -71,6 +74,7 @@ nav {
 .logo {
   font-size: 1.75rem;
   font-weight: 500;
+  background-color: var(--terciary-color);
 }
 
 ul {
@@ -107,11 +111,11 @@ ul {
 }
 
 .hear {
-  color: var(--primary-color);
+  color: var(--terciary-color);
 }
 
 .connecting {
-  color: var(--secondary-color);
+  color: var(--terciary-color);
 }
 
 .btn {
@@ -119,34 +123,25 @@ ul {
   display: inline-block;
   padding: 0.8rem 0.6rem;
   border: none;
-  font-size: 1.4rem;
+  font-size: 15px;
   border-radius: 5px;
-  color: #fff;
 }
 
-.red {
-  background-color: var(--secondary-color);
+.red, .blue {
   margin-right: 1.5rem;
+  background-color:  var(--secondary-color);
+  color: var(--terciary-color);
+  border: solid var(--terciary-color) 1px;
 }
 
-.red:hover {
-  background-color: #f1262d;
-  color: #fff;
-}
-
-.blue {
-  background-color: var(--primary-color);
-}
-
-.blue:hover {
-  background-color: #095cf7;
-  color: #fff;
+.red:hover, .blue:hover {
+  background-color: var(--terciary-color);
 }
 
 #videopreview {
   position: flex;
   border-style: solid;
-  border-color: #f1262d #999bf8;
+  border-color: var(--terciary-color);
   border-radius: 5px;
   height: 325px;
   border-width: 5px;

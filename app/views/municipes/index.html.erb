@@ -36,7 +36,7 @@
             
               <td scope="row"><%= municipe.phone %></td>
                    
-              <td scope="row"><%= municipe.status %></td>
+              <td scope="row"><%= active_or_inactive(municipe.status) %></td>
             
               <td><%= link_to 'Mostrar', municipe, id: :buttons %></td>
 

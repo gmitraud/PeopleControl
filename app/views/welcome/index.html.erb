@@ -39,8 +39,8 @@
         <p>
           Feito com Ruby on Rails! 
         </p>
-        <%= link_to 'Munícipes', municipes_path, class: "btn red" %>
-        <%= link_to 'Endereços', enderecos_path, class: "btn blue" %>
+        <%= link_to 'Cadastro de Munícipes', municipes_path, class: "btn red" %>
+        <%= link_to 'Endereços Cadastrados', enderecos_path, class: "btn blue" %>
       </div>
       
       <div id="videopreview">
@@ -54,33 +54,34 @@
 
       <script>
 
-      let videopreview = document.querySelector("video")
-      function startPreview() {
-      videopreview.muted = true;
-      videopreview.currentTime = 1;
-      videopreview.playbackRate = 0.5;
-      videopreview.play();
-      }
+      let videopreview = document.querySelector("video");
+        let previewTimeout = null;
+        let videoPausedAt = null;
 
-      function stopPreview() {
-      videopreview.currentTime = 0;
-      videopreview.playbackRate = 1;
-      videopreview.pause();
-      }
+        function startPreview() {
+          videopreview.muted = true;
+          videopreview.playbackRate = 0.5;
+          videopreview.play();
+        }
 
-      let previewTimeout = null;
+        function stopPreview() {
+          videoPausedAt = videopreview.currentTime;
+          videopreview.pause();
+        }
 
-      // debugger
-    videopreview.addEventListener("mouseover", () => {
-        startPreview();
-        previewTimeout = setTimeout(stopPreview, 4000);
-      });
+        videopreview.addEventListener("mouseenter", () => {
+          if (videoPausedAt === null) {
+            startPreview();
+          } else {
+            videopreview.currentTime = videoPausedAt;
+            videoPausedAt = null;
+            videopreview.play();
+          }
+        });
 
-    videopreview.addEventListener("mouseleave", () => {
-        clearTimeout(previewTimeout);
-        previewTimeout = null;
-        stopPreview();
-      });
-      </script>
+        videopreview.addEventListener("mouseleave", () => {
+          stopPreview();
+        });
+    </script>
   </body>
 </html>

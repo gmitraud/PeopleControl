@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_21_131155) do
+ActiveRecord::Schema.define(version: 2023_03_30_142629) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2022_12_21_131155) do
     t.string "ibge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "municipe_id"
+    t.index ["municipe_id"], name: "index_enderecos_on_municipe_id"
   end
 
   create_table "municipes", force: :cascade do |t|

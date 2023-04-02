@@ -1,0 +1,16 @@
+<h1>Endereço de <%= @municipe.fullname %>:</h1>
+
+<% if @endereco.present? %>
+
+  <p>Rua: <%= @endereco.rua %></p>
+  <p>CEP: <%= @endereco.cep %></p>
+  <p>Número: <%= @endereco.numero %></p>
+  <p>Complemento: <%= @endereco.complemento %></p>
+  <p>Bairro: <%= @endereco.bairro %></p>
+  <p>Cidade: <%= @endereco.ibge %></p>
+  <p>Estado: <%= @endereco.uf %></p>
+  
+
+<% else %>
+  <p>O munícipe ainda não possui um endereço cadastrado.</p>
+<% end %>

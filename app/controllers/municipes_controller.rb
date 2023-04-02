@@ -1,5 +1,11 @@
 class MunicipesController < ApplicationController
-  before_action :set_municipe, only: %i[ show edit update destroy ]
+  before_action :set_municipe, only: %i[ show edit update destroy detalhe_endereco ]
+
+  def detalhe_endereco
+    @endereco = @municipe.endereco
+
+    render 'municipes/detalhe_endereco'
+  end
 
   # GET /municipes or /municipes.json
   def index
@@ -65,6 +71,6 @@ class MunicipesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def municipe_params
-      params.require(:municipe).permit(:fullname, :cpf, :cns, :email, :birthdate, :phone, :photo, :status)
+      params.permit(:fullname, :cpf, :cns, :email, :birthdate, :phone, :photo, :status, endereco_attributes: [:rua, :complemento, :numero, :bairro, :cidade, :uf, :cep, :ibge])
     end
 end

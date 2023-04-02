@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag "register", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "autocep", media: "all", "data-turbolinks-track" => true%>
 
 <%= form_with(model: municipe, local: true) do |form| %>
   <% if municipe.errors.any? %>
@@ -21,40 +22,96 @@
     </section>
   </div>
 
-  <div class="row">
+  <div class="cpf-cns">
     <section class="col-50">
     <%= form.label "CPF", id: :label %>
     <%= form.text_field :cpf, required: :true, placeholder: "Digite seu CPF", id: :textfield %>
+    </section>
 
+    <section class="col-50">
     <%= form.label "CNS", id: :label %>
     <%= form.text_field :cns, required: :true, placeholder: "Digite seu CNS", id: :textfield %>
+    </section>
   </div>
 
-  <div class="row">
+  <div class="email-phone">
   <section class="col-50">
     <%= form.label "Endereço de Email", id: :label %>
     <%= form.text_field :email, required: :true, placeholder: "Digite seu Email", id: :textfield %>
+  </section>
 
+  <section class="col-50">
     <%= form.label "Telefone", id: :label %>
     <%= form.text_field :phone, required: :true, placeholder: "Digite seu celular", id: :textfield %>
   </section>
   </div>
 
-  <div class="row">
+  <div class="birth-pic-sta">
   <section class="col-50">
     <%= form.label "Data de Nascimento", id: :label %>
     <%= form.date_select :birthdate, required: :true, id: :datefield %>
+    </section>
 
+  <section class="col-50">
     <%= form.label "Foto", id: :label %>
     <%= form.file_field :photo, id: :filefield %>
+  </section>
 
-    <%= form.label "Status", id: :label %>
-    <%= form.check_box :status, id: :checkbox %>
-    </section>
+  <section class="col-50">
+    <%= form.label :status, 'Status', id: :label %>
+    <%= form.select :status, [['Ativo', true], ['Inativo', false]], required: :true, include_blank: 'Selecione'%>   
+  </section>
   </div>
+  
+<div class="address">
+  <section class="col-50">
+    <%= form.label :cep, id: :label  %>
+    <%= form.text_field :cep, name: "endereco_attributes[cep]", id:"cep", value:"", size:"20", maxlength:"9",
+    onblur:"pesquisacep(this.value);" %>
+    </section>
+
+  <section class="col-50">
+    <%= form.label :rua, id: :label %>
+    <%= form.text_field :rua, name: "endereco_attributes[rua]", id:"rua" %>
+  </section>
+
+  <section class="col-50">
+    <%= form.label :numero, id: :label %>
+    <%= form.text_field :numero, name: "endereco_attributes[numero]", id: "numero" %>
+  </section>
+  </div>
+  
+  <div class="address-2">
+  <section class="col-50">
+    <%= form.label :complemento, id: :label %>
+    <%= form.text_field :complemento, name: "endereco_attributes[complemento]", id: "complemento" %>
+  </section> 
+
+  <section class="col-50">
+    <%= form.label :bairro, id: :label %>
+    <%= form.text_field :bairro, name: "endereco_attributes[bairro]", id: "bairro" %>
+  </section>  
+
+  <section class="col-50">
+    <%= form.label :cidade, id: :label %>
+    <%= form.text_field :cidade, name: "endereco_attributes[cidade]", id: "cidade" %>
+  </section>
+  </div>
+
+<div class="uf-ibge">
+  <section class="col-50">
+    <%= form.label :uf, id: :label %>
+    <%= form.text_field :uf, name: "endereco_attributes[uf]", id:"uf" %>
+    </section>
+  
+  <section class="col-50">
+    <%= form.label :ibge, id: :label %>
+    <%= form.text_field :ibge, name: "endereco_attributes[ibge]", id: "ibge" %>
+  </section>
+</div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Criar cadastro", id: :submit %>
   </div>
-  </section>
+</section>
 <% end %>
