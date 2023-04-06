@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 /* CSS Variables */
 :root {
@@ -50,11 +52,18 @@ a:hover {
 }
 
 .jab {
+  font-family: 'Great Vibes', cursive;
   color: var(--primary-color);
 }
 
 .tv {
+  font-family: 'Oswald', sans-serif;
   color: var(--secondary-color);
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
 }
 
 nav {
@@ -111,6 +120,7 @@ ul {
 }
 
 .hear {
+  font-family: 'Oswald', sans-serif;
   color: var(--terciary-color);
 }
 

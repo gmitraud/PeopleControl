@@ -13,7 +13,7 @@ class EnderecosController < ApplicationController
 
   # GET /enderecos/new
   def new
-    @endereco = Endereco.new
+    @endereco = Endereco.new(municipe_id: params[:municipe_id])
   end
 
   # GET /enderecos/1/edit
@@ -66,6 +66,6 @@ class EnderecosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def endereco_params
-      params.require(:endereco).permit(:cep, :rua, :numero, :complemento, :bairro, :cidade, :uf, :ibge)
+      params.require(:endereco).permit(:cep, :rua, :numero, :complemento, :bairro, :cidade, :uf, :ibge, :municipe_id)
     end
 end

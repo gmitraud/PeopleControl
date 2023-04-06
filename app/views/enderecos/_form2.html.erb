@@ -1,7 +1,11 @@
 <%= stylesheet_link_tag "register", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "autocep", media: "all", "data-turbolinks-track" => true%>
 
-<%= form_with(model: endereco, local: true, method: :patch) do |form| %>
+
+
+<%= form_with(model: endereco, local: true) do |form| %>
+  <%= form.hidden_field :municipe_id %>
+  
   <% if endereco.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(endereco.errors.count, "error") %> prohibited this endereco from being saved:</h2>
@@ -69,7 +73,7 @@
   </div>
 
     <div class="actions">
-      <%= form.submit "Atualizar cadastro", id: :btnaction %>
+      <%= form.submit "Cadastrar", id: :btnaction %>
       <%= link_to 'Voltar', :back, id: :btnaction %>
     </div>
 

@@ -10,9 +10,9 @@
     <table>
       <thead class="thead1"> 
 
-        <p>
+        <div>
         <%= image_tag(@municipe.photo, size: "250x150") if @municipe.photo.attached? %>
-        </p>
+        </div>
         
         <h1>
           <strong><%= @municipe.fullname %></strong>
@@ -46,6 +46,7 @@
 
       <%= link_to 'Voltar', municipes_path, id: :back1 %>
       <%= link_to 'Editar', edit_municipe_path(@municipe), id: :edit1 %>
+      <%= link_to 'Cadastrar Endereco', new_endereco_path(@municipe), id: :edit1%>
       <%= link_to 'Mostrar Endereco', detalhe_endereco_path(@municipe), id: :edit1%>
     </div>
   </section>

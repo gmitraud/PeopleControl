@@ -18,11 +18,11 @@
   <div class="row">
     <section class="col-100">
       <%= form.label "Nome Completo", id: :label %>
-      <%= form.text_field :fullname, required: :true, placeholder: "Digite seu nome completo", id: :textfield %>
+      <%= form.text_field :fullname, required: :true, placeholder: "Digite seu nome completo", id: :fullnametxt %>
     </section>
   </div>
 
-  <div class="cpf-cns">
+  <div class="firstrow">
     <section class="col-50">
     <%= form.label "CPF", id: :label %>
     <%= form.text_field :cpf, required: :true, placeholder: "Digite seu CPF", id: :textfield %>
@@ -34,7 +34,7 @@
     </section>
   </div>
 
-  <div class="email-phone">
+  <div class="secondrow">
   <section class="col-50">
     <%= form.label "Endereço de Email", id: :label %>
     <%= form.text_field :email, required: :true, placeholder: "Digite seu Email", id: :textfield %>
@@ -46,10 +46,10 @@
   </section>
   </div>
 
-  <div class="birth-pic-sta">
+  <div class="thirdrow">
   <section class="col-50">
     <%= form.label "Data de Nascimento", id: :label %>
-    <%= form.date_select :birthdate, required: :true, id: :datefield %>
+    <%= form.date_select :birthdate, required: :true %>
     </section>
 
   <section class="col-50">
@@ -66,7 +66,7 @@
 <div class="address">
   <section class="col-50">
     <%= form.label :cep, id: :label  %>
-    <%= form.text_field :cep, name: "endereco_attributes[cep]", id:"cep", value:"", size:"20", maxlength:"9",
+    <%= form.text_field :cep, name: "endereco_attributes[cep]", id:"fieldaddress", value:"", size:"20", maxlength:"9",
     onblur:"pesquisacep(this.value);" %>
     </section>
 
@@ -111,7 +111,8 @@
 </div>
 
   <div class="actions">
-    <%= form.submit "Criar cadastro", id: :submit %>
+    <%= form.submit "Criar cadastro", id: :btnaction %>
+    <%= link_to 'Voltar', municipes_path, id: :btnaction %>
   </div>
 </section>
 <% end %>

@@ -5,7 +5,15 @@
     </head>
 
     <body>
+    
     <section class="table1">
+    <section class="teste">
+    <div class="btnsdiv">
+      <%= link_to 'Voltar', welcome_index_path, class: "btn new" %>
+      <%= link_to 'Novo Municipe', new_municipe_path, class: "btn new2" %>
+      </div>
+        </section>
+
         <table>
           <thead class="thead1">
           <h1>Munícipes</h1>
@@ -41,17 +49,13 @@
               <td><%= link_to 'Mostrar', municipe, id: :buttons %></td>
 
               <td><%= link_to 'Editar', edit_municipe_path(municipe), id: :buttons %></td>
-
-              <td><%= link_to 'Deletar Cadastro', municipe, method: :delete, data: { confirm: 'Você tem certeza? ESta ação não poderá ser desfeita.' } %></td>
+             
             </tr>
             <% end %>
           </tbody>
         </table>
 
-      <div class="btnsdiv">
-      <%= link_to 'Voltar', welcome_index_path, id: :btnnew %>
-      <%= link_to 'Novo Municipe', new_municipe_path, id: :btnnew %>
-      </div>
+      
       </section>
     </body>
 </html>

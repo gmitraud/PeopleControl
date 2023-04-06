@@ -1,11 +1,20 @@
-<p id="notice"><%= notice %></p>
-<%= stylesheet_link_tag "register_address", media: "all", "data-turbolinks-track" => true %>
+ <!DOCTYPE html>
+ <html>
+    <head>
+    <%= stylesheet_link_tag "tablestyle", media: "all", "data-turbolinks-track" => true %>
+    </head>
 
-<body>
-    <section class="index-tbody">
+
+    <body>
+    <section class="table1">
         <table>
+          <div class="btnsdiv">
+      <%= link_to 'Voltar', welcome_index_path, class: "btn new" %>
+      <%= link_to 'Novo Endereço', new_endereco_path, class: "btn new2" %>
+      </div>
+
           <thead class="thead1">
-          <h1>Enderecos</h1>
+          <h1>Endereços</h1>
             <tr>
               <th scope="col">CEP</th>
               <th scope="col">Rua</th>
@@ -42,16 +51,12 @@
 
               <td><%= link_to 'Editar', edit_endereco_path(endereco), id: :buttons %></td>
 
-              <td><%= link_to 'Deletar Cadastro', endereco, method: :delete, data: { confirm: 'Você tem certeza? ESta ação não poderá ser desfeita.' } %></td>
             </tr>
             <% end %>
           </tbody>
         </table>
 
-      <div class="btnsdiv">
-      <%= link_to 'Voltar', welcome_index_path, id: :btnnew %>
-      <%= link_to 'Novo Endereco', new_endereco_path, id: :btnnew %>
-      </div>
+      
       </section>
     </body>
 </html>

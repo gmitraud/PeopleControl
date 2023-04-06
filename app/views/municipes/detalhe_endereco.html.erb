@@ -1,16 +1,67 @@
-<h1>Endereço de <%= @municipe.fullname %>:</h1>
+<!DOCTYPE html>
+ <html>
+    <head>
+    <%= stylesheet_link_tag "address", media: "all", "data-turbolinks-track" => true %>
+    </head>
 
-<% if @endereco.present? %>
+     <% if @endereco.present? %>
 
-  <p>Rua: <%= @endereco.rua %></p>
-  <p>CEP: <%= @endereco.cep %></p>
-  <p>Número: <%= @endereco.numero %></p>
-  <p>Complemento: <%= @endereco.complemento %></p>
-  <p>Bairro: <%= @endereco.bairro %></p>
-  <p>Cidade: <%= @endereco.ibge %></p>
-  <p>Estado: <%= @endereco.uf %></p>
+    <body>
+             <section class="table1">
+              <table>
+                <thead class="thead1"> 
+
+              <h1>
+                Endereço de <%= @municipe.fullname %>
+              </h1>
+
+            <tr>
+              <th scope="col">Rua</th>
+              <th scope="col">CEP</th>
+              <th scope="col">Numero</th>
+              <th scope="col">Complemento</th>
+              <th scope="col">Bairro</th>
+              <th scope="col">IBGE</th>
+              <th scope="col">UF</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td scope="row"><%= @endereco.rua %></td>
+            
+              <td scope="row"><%= @endereco.cep %></td>
+            
+              <td scope="row"><%= @endereco.numero %></td>
+            
+              <td scope="row"><%= @endereco.complemento %></td>
+            
+              <td scope="row"><%= @endereco.bairro %></td>
+            
+              <td scope="row"><%= @endereco.ibge %></td>
+
+              <td scope="row"><%= @endereco.uf %></td>
+            </tr>
+          </tbody>
+        </table>
+
+      <div class="btnsdiv">
+
+        <%= link_to 'Voltar', municipes_path, id: :back1 %>
+        <%= link_to 'Editar', edit_endereco_path(@endereco), id: :edit1 %>
+      </div>
+      </section>
+
+      <% else %>
+        <div class="error msg">
+          <p>O munícipe ainda não possui um endereço cadastrado.</p>
+          <%= link_to 'Voltar', municipes_path, id: :edit1 %>
+          <%= link_to 'Cadastrar',  new_endereco_path(municipe_id: @municipe.id), id: :edit1 %>
+        </div>
+      <% end %>
+
+    </body>
+    </html>
+    
   
-
-<% else %>
-  <p>O munícipe ainda não possui um endereço cadastrado.</p>
-<% end %>
