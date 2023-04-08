@@ -1,0 +1,24 @@
+=> [32m#<ActiveModel::Errors:0x00007f924402fc00[0m
+ @base[32m=[0m
+  [32m#<Municipe:0x000055db3bd6b638[0m
+   id: [1;36mnil[0m,
+   fullname: [1;36mnil[0m,
+   cpf: [31m[1;31m"[0m[31m12345678901[1;31m"[0m[31m[0m,
+   cns: [1;36mnil[0m,
+   email: [1;36mnil[0m,
+   birthdate: [1;36mnil[0m,
+   phone: [1;36mnil[0m,
+   photo: [1;36mnil[0m,
+   status: [1;36mnil[0m,
+   created_at: [1;36mnil[0m,
+   updated_at: [1;36mnil[0m[32m>[0m,
+ @details[32m=[0m
+  {[33m:cns[0m=>
+    [{[33m:error[0m=>[33m:wrong_length[0m, [33m:count[0m=>[1;34m15[0m},
+     {[33m:error[0m=>[33m:not_a_number[0m, [33m:value[0m=>[1;36mnil[0m},
+     {[33m:error[0m=>[33m:blank[0m}]},
+ @messages[32m=[0m
+  {[33m:cns[0m=>
+    [[31m[1;31m"[0m[31mis the wrong length (should be 15 characters)[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mis not a number[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mcan't be blank[1;31m"[0m[31m[0m]}[32m>[0m
