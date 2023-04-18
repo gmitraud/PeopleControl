@@ -1,44 +1,45 @@
-<p id="notice"><%= notice %></p>
+ <!DOCTYPE html>
+ <html>
+    <head>
+    <%= stylesheet_link_tag "tablestyle", media: "all", "data-turbolinks-track" => true %>
+    </head>
 
-<p>
-  <strong>Cep:</strong>
-  <%= @endereco.cep %>
-</p>
+    <body>
+      <section class="table1">
+        <table>
+          <thead class="thead1">
+            <tr>
+              <th scope="col">CEP</th>
+              <th scope="col">Rua</th>
+              <th scope="col">Número</th>
+              <th scope="col">Complemento</th>
+              <th scope="col">Bairro</th>
+              <th scope="col">Cidade</th>
+              <th scope="col">UF</th>
+              <th scope="col">IBGE</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
 
-<p>
-  <strong>Rua:</strong>
-  <%= @endereco.rua %>
-</p>
+          <tbody>
+            <tr>
+              <td scope="row"><%= @endereco.cep %></td>
+              <td scope="row"><%= @endereco.rua %></td>
+              <td scope="row"><%= @endereco.numero %></td>
+              <td scope="row"><%= @endereco.complemento %></td>
+              <td scope="row"><%= @endereco.bairro %></td>
+              <td scope="row"><%= @endereco.cidade %></td>
+              <td scope="row"><%= @endereco.uf %></td>
+              <td scope="row"><%= @endereco.ibge %></td>
+            </tr>
+          </tbody>
+        </table>
 
-<p>
-  <strong>Numero:</strong>
-  <%= @endereco.numero %>
-</p>
+      <div class="btnsdiv">
 
-<p>
-  <strong>Complemento:</strong>
-  <%= @endereco.complemento %>
-</p>
+        <%= link_to 'Voltar', enderecos_path, id: :back1 %>
+        <%= link_to 'Editar', edit_endereco_path(@endereco), id: :edit1 %>
 
-<p>
-  <strong>Bairro:</strong>
-  <%= @endereco.bairro %>
-</p>
-
-<p>
-  <strong>Cidade:</strong>
-  <%= @endereco.cidade %>
-</p>
-
-<p>
-  <strong>Uf:</strong>
-  <%= @endereco.uf %>
-</p>
-
-<p>
-  <strong>Ibge:</strong>
-  <%= @endereco.ibge %>
-</p>
-
-<%= link_to 'Editar', edit_endereco_path(@endereco) %> |
-<%= link_to 'Voltar', enderecos_path %>
+      </div>
+  </section>
+</body>

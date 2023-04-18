@@ -49,7 +49,8 @@
   <div class="thirdrow">
   <section class="col-50">
     <%= form.label "Data de Nascimento", id: :label %>
-    <%= form.date_select :birthdate, required: :true %>
+    <%= form.date_select :birthdate, start_year: 1900, end_year: Date.today.year, required: true %>
+
     </section>
 
   <section class="col-50">
@@ -63,53 +64,6 @@
   </section>
   </div>
   
-<div class="address">
-  <section class="col-50">
-    <%= form.label :cep, id: :label  %>
-    <%= form.text_field :cep, name: "endereco_attributes[cep]", id:"fieldaddress", value:"", size:"20", maxlength:"9",
-    onblur:"pesquisacep(this.value);" %>
-    </section>
-
-  <section class="col-50">
-    <%= form.label :rua, id: :label %>
-    <%= form.text_field :rua, name: "endereco_attributes[rua]", id:"rua" %>
-  </section>
-
-  <section class="col-50">
-    <%= form.label :numero, id: :label %>
-    <%= form.text_field :numero, name: "endereco_attributes[numero]", id: "numero" %>
-  </section>
-  </div>
-  
-  <div class="address-2">
-  <section class="col-50">
-    <%= form.label :complemento, id: :label %>
-    <%= form.text_field :complemento, name: "endereco_attributes[complemento]", id: "complemento" %>
-  </section> 
-
-  <section class="col-50">
-    <%= form.label :bairro, id: :label %>
-    <%= form.text_field :bairro, name: "endereco_attributes[bairro]", id: "bairro" %>
-  </section>  
-
-  <section class="col-50">
-    <%= form.label :cidade, id: :label %>
-    <%= form.text_field :cidade, name: "endereco_attributes[cidade]", id: "cidade" %>
-  </section>
-  </div>
-
-<div class="uf-ibge">
-  <section class="col-50">
-    <%= form.label :uf, id: :label %>
-    <%= form.text_field :uf, name: "endereco_attributes[uf]", id:"uf" %>
-    </section>
-  
-  <section class="col-50">
-    <%= form.label :ibge, id: :label %>
-    <%= form.text_field :ibge, name: "endereco_attributes[ibge]", id: "ibge" %>
-  </section>
-</div>
-
   <div class="actions">
     <%= form.submit "Criar cadastro", id: :btnaction %>
     <%= link_to 'Voltar', municipes_path, id: :btnaction %>
