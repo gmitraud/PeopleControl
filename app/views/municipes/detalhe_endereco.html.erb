@@ -54,10 +54,13 @@
       </section>
 
       <% else %>
-        <div class="error msg">
+        <div class="error-msg">
           <p>O munícipe ainda não possui um endereço cadastrado.</p>
-          <%= link_to 'Voltar', municipes_path, id: :edit1 %>
-          <%= link_to 'Cadastrar',  new_endereco_path(municipe_id: @municipe.id), id: :edit1 %>
+
+            <div class="btnsdiv">
+              <%= link_to 'Voltar', municipes_path, id: :edit1 %>
+              <%= link_to 'Cadastrar',  new_endereco_path(municipe_id: @municipe.id), id: :edit1 %>
+            </div>
         </div>
       <% end %>
 
